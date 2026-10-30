@@ -1,0 +1,31 @@
+preset-overlap 0.1.0 | complete
+
+p1: "examples/color.xmp" [complete]
+p2: "examples/grain.xmp" [complete]
+p3: "examples/finish.xmp" [complete]
+
+Adjustment   | p1     | p2   | p3    | Relationship
+Contrast2012 | "10"   | "0"  | .     | shared_different
+Exposure2012 | "0.30" | .    | "0.3" | shared_equal
+GrainAmount  | .      | "20" | .     | exclusive
+
+Shared fields: 2 (1 equal, 1 different, 0 ambiguous)
+. = not declared; ? = no value selected. Argument order is reading order.
+
+Provenance (namespace aliases are fixed, independent of input prefixes)
+p1 SHA-256: 225ced54e518bb01b5d366548689951d703876c4743ffcd479fee614bac6eb00
+p2 SHA-256: 87c488f4919a089f264724a8143dc6680c13b60d0a67972565b93cd2bcaea8cc
+p3 SHA-256: 236b3819b9785e82a001fd94d9fbfe1db87caaa5d0d1ce627409dfbfad341c64
+p1 Contrast2012 = "10" @ /x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Contrast2012
+p2 Contrast2012 = "0" @ /x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Contrast2012
+p1 Exposure2012 = "0.30" @ /x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Exposure2012
+p3 Exposure2012 = "0.3" @ /x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Exposure2012
+p2 GrainAmount = "20" @ /x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:GrainAmount
+
+Preset metadata
+None declared.
+
+Coverage pending
+None.
+
+Explicit declarations only. Shared fields do not establish visual compatibility.

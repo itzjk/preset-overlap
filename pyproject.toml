@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "preset-overlap"
+version = "0.1.0"
+description = "See which Lightroom XMP presets declare the same adjustments before combining them."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["photography", "lightroom", "camera-raw", "xmp", "presets", "xml", "cli", "offline"]
+classifiers = ["Programming Language :: Python :: 3", "Environment :: Console", "Topic :: Multimedia :: Graphics"]
+dependencies = ["defusedxml>=0.7.1,<0.8"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+
+[project.scripts]
+preset-overlap = "preset_overlap.cli:main"
+
+[project.urls]
+Repository = "https://github.com/itzjk/preset-overlap"
+Issues = "https://github.com/itzjk/preset-overlap/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

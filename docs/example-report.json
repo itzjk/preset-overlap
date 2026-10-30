@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "status": "complete",
+  "namespaces": {
+    "crs": "http://ns.adobe.com/camera-raw-settings/1.0/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "x": "adobe:ns:meta/"
+  },
+  "inputs": [
+    {
+      "id": "p1",
+      "path": "examples/color.xmp",
+      "sha256": "225ced54e518bb01b5d366548689951d703876c4743ffcd479fee614bac6eb00",
+      "size_bytes": 316,
+      "status": "complete",
+      "metadata": []
+    },
+    {
+      "id": "p2",
+      "path": "examples/grain.xmp",
+      "sha256": "87c488f4919a089f264724a8143dc6680c13b60d0a67972565b93cd2bcaea8cc",
+      "size_bytes": 312,
+      "status": "complete",
+      "metadata": []
+    },
+    {
+      "id": "p3",
+      "path": "examples/finish.xmp",
+      "sha256": "236b3819b9785e82a001fd94d9fbfe1db87caaa5d0d1ce627409dfbfad341c64",
+      "size_bytes": 299,
+      "status": "complete",
+      "metadata": []
+    }
+  ],
+  "fields": [
+    {
+      "namespace": "http://ns.adobe.com/camera-raw-settings/1.0/",
+      "name": "Contrast2012",
+      "kind": "decimal",
+      "classification": "shared_different",
+      "declared_in": [
+        "p1",
+        "p2"
+      ],
+      "cells": [
+        {
+          "input_id": "p1",
+          "state": "declared",
+          "occurrences": [
+            {
+              "path": "/x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Contrast2012",
+              "representation": "attribute",
+              "literal": "10",
+              "normalized": "10"
+            }
+          ]
+        },
+        {
+          "input_id": "p2",
+          "state": "declared",
+          "occurrences": [
+            {
+              "path": "/x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Contrast2012",
+              "representation": "attribute",
+              "literal": "0",
+              "normalized": "0"
+            }
+          ]
+        },
+        {
+          "input_id": "p3",
+          "state": "absent",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "namespace": "http://ns.adobe.com/camera-raw-settings/1.0/",
+      "name": "Exposure2012",
+      "kind": "decimal",
+      "classification": "shared_equal",
+      "declared_in": [
+        "p1",
+        "p3"
+      ],
+      "cells": [
+        {
+          "input_id": "p1",
+          "state": "declared",
+          "occurrences": [
+            {
+              "path": "/x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Exposure2012",
+              "representation": "attribute",
+              "literal": "0.30",
+              "normalized": "0.3"
+            }
+          ]
+        },
+        {
+          "input_id": "p2",
+          "state": "absent",
+          "occurrences": []
+        },
+        {
+          "input_id": "p3",
+          "state": "declared",
+          "occurrences": [
+            {
+              "path": "/x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:Exposure2012",
+              "representation": "attribute",
+              "literal": "0.3",
+              "normalized": "0.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "http://ns.adobe.com/camera-raw-settings/1.0/",
+      "name": "GrainAmount",
+      "kind": "decimal",
+      "classification": "exclusive",
+      "declared_in": [
+        "p2"
+      ],
+      "cells": [
+        {
+          "input_id": "p1",
+          "state": "absent",
+          "occurrences": []
+        },
+        {
+          "input_id": "p2",
+          "state": "declared",
+          "occurrences": [
+            {
+              "path": "/x:xmpmeta[1]/rdf:RDF[1]/rdf:Description[1]/@crs:GrainAmount",
+              "representation": "attribute",
+              "literal": "20",
+              "normalized": "20"
+            }
+          ]
+        },
+        {
+          "input_id": "p3",
+          "state": "absent",
+          "occurrences": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "fields": 3,
+    "shared_fields": 2,
+    "exclusive": 1,
+    "shared_equal": 1,
+    "shared_different": 1,
+    "ambiguous": 0,
+    "pending": 0
+  },
+  "coverage_pending": [],
+  "errors": []
+}

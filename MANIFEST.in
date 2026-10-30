@@ -1,0 +1,3 @@
+recursive-include examples *.xmp
+recursive-include docs *.md *.json *.tape *.gif *.txt
+recursive-include tests *.py
