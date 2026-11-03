@@ -8,6 +8,14 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python: ['3.9', '3.13']
+        # ubuntu-latest moved to Ubuntu 26.04, which no longer offers Python 3.9 (EOL). The
+        # project still supports 3.9, so run that one on the last image that ships it.
+        exclude:
+          - os: ubuntu-latest
+            python: '3.9'
+        include:
+          - os: ubuntu-24.04
+            python: '3.9'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
