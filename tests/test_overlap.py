@@ -250,7 +250,10 @@ def test_invalid_input_cannot_establish_absence(tmp_path):
     assert field(report, "Exposure2012")["cells"][0] == {"input_id": "p1", "state": "unavailable", "occurrences": []}
 
 
-@pytest.mark.parametrize("content,fragment", [(b" " * (MAX_BYTES + 1), "bytes"), (("<a>" * (MAX_DEPTH + 1) + "</a>" * (MAX_DEPTH + 1)).encode(), "depth"), (("<a>" + "<b/>" * MAX_NODES + "</a>").encode(), "count")])
+# Short, explicit ids: the inputs are multi-megabyte blobs, and pytest puts the nodeid into the
+# PYTEST_CURRENT_TEST environment variable. Without fixed ids the blob lands in that value, and
+# Windows rejects an environment variable longer than 32767 characters (every case errors at setup).
+@pytest.mark.parametrize("content,fragment", [(b" " * (MAX_BYTES + 1), "bytes"), (("<a>" * (MAX_DEPTH + 1) + "</a>" * (MAX_DEPTH + 1)).encode(), "depth"), (("<a>" + "<b/>" * MAX_NODES + "</a>").encode(), "count")], ids=["bytes", "depth", "count"])
 def test_resource_limits(tmp_path, content, fragment):
     path = write(tmp_path, "limit.xmp", content)
     report = analyze([path])
